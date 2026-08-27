@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summer's Pastry — Handmade Cakes &amp; Pâtisserie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FAF3E9;
+      --cocoa: #3B2A20;
+      --rose: #D98BA5;
+      --gold: #E3A857;
+      --berry: #7A2E3A;
+      --sage: #8A9A5B;
+      --card: #FFFDFA;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--cocoa);
+      font-family: 'Work Sans', sans-serif;
+      line-height: 1.5;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Fraunces', serif;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      padding: 28px 6vw 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-left: 28px;
+      color: var(--cocoa);
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: 40px 6vw 70px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--berry);
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--berry);
+    }
+
+    .hero p {
+      max-width: 480px;
+      margin-top: 18px;
+      font-size: 1.08rem;
+      opacity: 0.85;
+    }
+
+    .hero-ctas {
+      margin-top: 30px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transform-style: preserve-3d;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-primary {
+      background: var(--berry);
+      color: var(--cream);
+      box-shadow:
+        0 1px 0 #5c1f28 inset,
+        0 -10px 16px rgba(0, 0, 0, 0.15) inset,
+        0 10px 0 #5c1f28,
+        0 20px 24px rgba(122, 46, 58, 0.35);
+    }
+
+    .btn-primary:hover {
+      box-shadow:
+        0 1px 0 #5c1f28 inset,
+        0 -10px 16px rgba(0, 0, 0, 0.15) inset,
+        0 12px 0 #5c1f28,
+        0 26px 28px rgba(122, 46, 58, 0.4);
+    }
+
+    .btn-primary:active {
+      box-shadow:
+        0 1px 0 #5c1f28 inset,
+        0 -6px 10px rgba(0, 0, 0, 0.18) inset,
+        0 3px 0 #5c1f28,
+        0 8px 14px rgba(122, 46, 58, 0.3);
+    }
+
+    .btn-ghost {
+      border: 1.5px solid var(--cocoa);
+      color: var(--cocoa);
+      background: var(--cream);
+      box-shadow:
+        0 8px 0 rgba(59, 42, 32, 0.12),
+        0 16px 20px rgba(59, 42, 32, 0.1);
+    }
+
+    .btn-ghost:hover {
+      box-shadow:
+        0 10px 0 rgba(59, 42, 32, 0.12),
+        0 20px 24px rgba(59, 42, 32, 0.14);
+    }
+
+    .btn-ghost:active {
+      box-shadow:
+        0 3px 0 rgba(59, 42, 32, 0.12),
+        0 6px 10px rgba(59, 42, 32, 0.1);
+    }
+
+    .hero-art {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1000px;
+    }
+
+    .hero-art svg {
+      animation: float-cake 5s ease-in-out infinite;
+      filter: drop-shadow(0 30px 26px rgba(59, 42, 32, 0.28));
+    }
+
+    @keyframes float-cake {
+
+      0%,
+      100% {
+        transform: rotateX(8deg) rotateY(-10deg) translateY(0);
+      }
+
+      50% {
+        transform: rotateX(8deg) rotateY(-10deg) translateY(-14px);
+      }
+    }
+
+    /* ---------- Frosting divider (signature element) ---------- */
+    .frosting-divider {
+      width: 100%;
+      display: block;
+      margin-top: -1px;
+      filter: drop-shadow(0 -6px 10px rgba(59, 42, 32, 0.06));
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-band {
+      background: var(--card);
+      padding: 10px 6vw 70px;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 46px;
+    }
+
+    .section-head .eyebrow {
+      color: var(--sage);
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      font-weight: 600;
+    }
+
+    .section-head p {
+      margin-top: 12px;
+      opacity: 0.75;
+    }
+
+    /* ---------- Menu grid ---------- */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      max-width: 1100px;
+      margin: 0 auto;
+      perspective: 1200px;
+    }
+
+    .cake-card {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 26px 24px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.12s ease-out, box-shadow 0.25s ease;
+      border: 1px solid rgba(59, 42, 32, 0.07);
+      transform-style: preserve-3d;
+      box-shadow: 0 2px 0 rgba(59, 42, 32, 0.05), 0 8px 16px rgba(59, 42, 32, 0.06);
+      will-change: transform;
+    }
+
+    .cake-card:hover {
+      box-shadow: 0 30px 40px -10px rgba(59, 42, 32, 0.28), 0 10px 16px rgba(59, 42, 32, 0.1);
+    }
+
+    .cake-card>* {
+      transform: translateZ(18px);
+    }
+
+    .cake-swatch {
+      width: 100%;
+      height: 100px;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: visible;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .cake-swatch .mini-cake {
+      width: 76px;
+      filter: drop-shadow(0 8px 10px rgba(59, 42, 32, 0.25));
+    }
+
+    .cake-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .cake-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      color: var(--berry);
+      margin-bottom: 8px;
+    }
+
+    .cake-card p.desc {
+      font-size: 0.92rem;
+      opacity: 0.75;
+      margin: 10px 0 18px;
+      min-height: 42px;
+    }
+
+    .cake-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-top: 1px dashed rgba(59, 42, 32, 0.2);
+      padding-top: 14px;
+    }
+
+    .cake-price {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--berry);
+    }
+
+    .cake-size {
+      font-size: 0.82rem;
+      opacity: 0.6;
+    }
+
+    /* ---------- How to order ---------- */
+    .steps-band {
+      background: var(--cream);
+    }
+
+    .steps-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 28px;
+      align-items: stretch;
+      perspective: 1200px;
+    }
+
+    .step-card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 32px 30px;
+      border: 1px solid rgba(59, 42, 32, 0.07);
+      box-shadow: 0 2px 0 rgba(59, 42, 32, 0.05), 0 10px 20px rgba(59, 42, 32, 0.07);
+      position: relative;
+    }
+
+    .step-number {
+      font-family: 'Fraunces', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--rose);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .step-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step-card>p {
+      opacity: 0.75;
+      font-size: 0.95rem;
+      margin: 0 0 18px;
+    }
+
+    .step-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+    }
+
+    .option-scroll {
+      position: relative;
+    }
+
+    .option-scroll::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 8px;
+      bottom: 0;
+      height: 28px;
+      background: linear-gradient(to bottom, rgba(255, 253, 250, 0), var(--card));
+      pointer-events: none;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .option-chips {
+      list-style: none;
+      margin: 0;
+      padding: 0 8px 4px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 230px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--rose) transparent;
+    }
+
+    .option-chips::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .option-chips::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .option-chips::-webkit-scrollbar-thumb {
+      background: var(--rose);
+      border-radius: 999px;
+    }
+
+    .option-chips li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .option-chips .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--berry);
+      flex-shrink: 0;
+    }
+
+    .option-chips .chip-note {
+      margin-left: auto;
+      font-size: 0.78rem;
+      opacity: 0.55;
+      font-weight: 400;
+    }
+
+    .soon-tag {
+      margin-left: auto;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      color: var(--sage);
+      background: rgba(138, 154, 91, 0.15);
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .price-table tr {
+      border-bottom: 1px dashed rgba(59, 42, 32, 0.18);
+    }
+
+    .price-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .price-table td {
+      padding: 12px 0;
+      vertical-align: top;
+    }
+
+    .price-table td:first-child {
+      font-weight: 500;
+    }
+
+    .price-table td:last-child {
+      text-align: right;
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      color: var(--berry);
+      white-space: nowrap;
+    }
+
+    .price-note {
+      display: block;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 0.72rem;
+      color: var(--cocoa);
+      opacity: 0.55;
+      white-space: normal;
+    }
+
+    /* ---------- Cake detail modal ---------- */
+    .cake-card[data-cake-img] {
+      cursor: pointer;
+    }
+
+    .cake-card[data-cake-img]:focus-visible {
+      outline: 2px solid var(--berry);
+      outline-offset: 3px;
+    }
+
+    .view-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--berry);
+      opacity: 0.7;
+      margin-top: 10px;
+    }
+
+    .cake-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(59, 42, 32, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+    }
+
+    .cake-modal-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cake-modal {
+      background: var(--card);
+      border-radius: 24px;
+      max-width: 420px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 40px 60px rgba(59, 42, 32, 0.35);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.2s ease;
+    }
+
+    .cake-modal-overlay.is-open .cake-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .cake-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 253, 250, 0.9);
+      color: var(--cocoa);
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(59, 42, 32, 0.2);
+      z-index: 2;
+    }
+
+    .cake-modal-img-wrap {
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      border-radius: 24px 24px 0 0;
+      background: var(--cream);
+    }
+
+    .cake-modal-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cake-modal-body {
+      padding: 26px 28px 28px;
+    }
+
+    .cake-modal-body h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 4px 0 16px;
+    }
+
+    .cake-modal-body .price-table {
+      margin-top: 4px;
+    }
+
+    .contact-band {
+      background: var(--cocoa);
+      color: var(--cream);
+      padding: 70px 6vw 60px;
+    }
+
+    .contact-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-band .eyebrow {
+      color: var(--gold);
+    }
+
+    .contact-band h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .contact-band p {
+      opacity: 0.8;
+      max-width: 380px;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(250, 243, 233, 0.15);
+    }
+
+    .contact-list li:first-child {
+      padding-top: 0;
+    }
+
+    .contact-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.6;
+      margin-bottom: 3px;
+    }
+
+    .contact-value {
+      font-size: 1.02rem;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px 6vw;
+      font-size: 0.85rem;
+      opacity: 0.55;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-bottom: 40px;
+      }
+
+      .hero-art {
+        order: -1;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .step-connector {
+        transform: rotate(90deg);
+        padding: 4px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        padding: 22px 5vw;
+      }
+
+      nav a {
+        margin-left: 16px;
+        font-size: 0.85rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--berry);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">
+      <img class="brand-mark" src="summers-pastry-logo.png" alt="Summer's Pastry logo">
+      <span class="brand-name">Summer's Pastry</span>
+    </div>
+    <nav>
+      <a href="#how-to-order">How to Order</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Sungai Ara Pasar • Every Saturday 8:00 AM</span>
+      <h1>Specialized in <em>Cheesecake</em> and <em>Tiramisu</em></h1>
+      <p>Welcome to <strong>Summer's Pastry</strong>! Every cake is handcrafted with pure butter, fresh ingredients and
+        genuine love. Visit our stall at Sungai Ara Pasar or message us on WhatsApp.</p>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn btn-primary">See the cakes</a>
+        <a href="https://wa.me/601136153993" target="_blank" class="btn btn-ghost">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg width="100%" viewBox="0 0 320 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- ===== Tier 1 (bottom) ===== -->
+        <!-- front face -->
+        <path d="M50 230 L50 275 L160 300 L160 255 Z" fill="#D6A067" />
+        <!-- side face (darker, away from light) -->
+        <path d="M270 230 L270 275 L160 300 L160 255 Z" fill="#B87F49" />
+        <!-- top face -->
+        <path d="M50 230 L160 205 L270 230 L160 255 Z" fill="#F3D9AE" />
+        <!-- top rim highlight -->
+        <path d="M50 230 L160 205 L270 230 L160 250 Z" fill="#FFF3DC" opacity="0.55" />
+
+        <!-- ===== Tier 2 (middle) ===== -->
+        <path d="M75 160 L75 205 L160 225 L160 180 Z" fill="#E2799B" />
+        <path d="M245 160 L245 205 L160 225 L160 180 Z" fill="#C25A7A" />
+        <path d="M75 160 L160 138 L245 160 L160 180 Z" fill="#F3B7CF" />
+        <path d="M75 160 L160 138 L245 160 L160 175 Z" fill="#FFE3ED" opacity="0.5" />
+
+        <!-- ===== Tier 3 (top) ===== -->
+        <path d="M100 95 L100 135 L160 150 L160 115 Z" fill="#EFB255" />
+        <path d="M220 95 L220 135 L160 150 L160 115 Z" fill="#CC8A34" />
+        <path d="M100 95 L160 78 L220 95 L160 115 Z" fill="#FBD98C" />
+        <path d="M100 95 L160 78 L220 95 L160 110 Z" fill="#FFF3D2" opacity="0.55" />
+
+        <!-- candle -->
+        <rect x="155" y="52" width="7" height="26" rx="3" fill="#7A2E3A" />
+        <path d="M158.5 52 C155 44 162 40 158.5 32" stroke="#7A2E3A" stroke-width="2.4" fill="none"
+          stroke-linecap="round" />
+        <ellipse cx="158.5" cy="28" rx="5" ry="8" fill="#E3A857" />
+        <ellipse cx="158.5" cy="27" rx="2.4" ry="4" fill="#FFE9B0" />
+
+        <!-- drip + sprinkles for depth cues -->
+        <circle cx="130" cy="118" r="4" fill="#FFF3D2" />
+        <circle cx="185" cy="122" r="4" fill="#FFF3D2" />
+        <circle cx="115" cy="180" r="5" fill="#FFE3ED" />
+        <circle cx="205" cy="185" r="5" fill="#FFE3ED" />
+        <circle cx="90" cy="248" r="6" fill="#FFF3DC" />
+        <circle cx="230" cy="252" r="6" fill="#FFF3DC" />
+
+        <!-- ground shadow -->
+        <ellipse cx="160" cy="308" rx="118" ry="14" fill="#3B2A20" opacity="0.16" />
+      </svg>
+    </div>
+  </section>
+
+  <svg class="frosting-divider" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M0,30 C50,60 100,0 150,30 C200,60 250,0 300,30 C350,60 400,0 450,30 C500,60 550,0 600,30 C650,60 700,0 750,30 C800,60 850,0 900,30 C950,60 1000,0 1050,30 C1100,60 1150,0 1200,30 L1200,60 L0,60 Z"
+      fill="#FFFDFA" />
+  </svg>
+
+  <section class="section-band steps-band" id="how-to-order">
+    <div class="section-head">
+      <span class="eyebrow">How to order</span>
+      <h2>Two easy steps</h2>
+      <p>No complicated forms — just pick a flavour, then pick a size you want.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-number">01</span>
+        <h3>Choose your cake</h3>
+        <p>Pick a flavour from our specialties — scroll to see them all.</p>
+        <div class="option-scroll">
+          <ul class="option-chips">
+            <li><span class="dot"></span>Original Tiramisu <span class="chip-note">per box</span></li>
+            <li><span class="dot"></span>Blueberry Cheesecake</li>
+            <li><span class="dot"></span>Strawberry Cheesecake</li>
+            <li><span class="dot"></span>Matcha Chocolate Cheesecake</li>
+            <li><span class="dot"></span>Matcha Cheesecake</li>
+            <li><span class="dot"></span>Customizable Cheesecake <span class="chip-note">ask us</span></li>
+            <li><span class="dot"></span>Mousse Cakes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step-connector">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">02</span>
+        <h3>Select your size</h3>
+        <p>Then choose the size that suits the occasion.</p>
+        <table class="price-table">
+          <tr>
+            <td>Cake slice</td>
+            <td>RM 12</td>
+          </tr>
+          <tr>
+            <td>Whole cake — 7"</td>
+            <td>RM 100</td>
+          </tr>
+          <tr>
+            <td>Whole cake — 9"</td>
+            <td>RM 135</td>
+          </tr>
+          <tr>
+            <td>Tiramisu — per box</td>
+            <td>RM 14
+              <span class="price-note">RM 13/box when ordering 2 or more</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band" id="menu">
+    <div class="section-head">
+      <span class="eyebrow">The menu</span>
+      <h2>Our flavours</h2>
+      <p>Every flavour is available as a slice, or a whole 7" / 9" cake. See pricing above.</p>
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="cake-card" tabindex="0" role="button" data-cake-name="Original Tiramisu" data-cake-img="tiramisu.jfif"
+        data-cake-tag="Signature" data-cake-prices='[["Per box","RM 14"],["2+ boxes","RM 13 each"]]'>
+        <div class="cake-swatch">
+          <svg class="mini-cake" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 50 L15 68 L50 78 L50 60 Z" fill="#C9A470" />
+            <path d="M85 50 L85 68 L50 78 L50 60 Z" fill="#9C7A4C" />
+            <path d="M15 50 L50 40 L85 50 L50 60 Z" fill="#E9CE9C" />
+            <circle cx="34" cy="45" r="1.6" fill="#5A3E22" />
+            <circle cx="42" cy="49" r="1.6" fill="#5A3E22" />
+            <circle cx="50" cy="44" r="1.6" fill="#5A3E22" />
+            <circle cx="58" cy="48" r="1.6" fill="#5A3E22" />
+            <circle cx="66" cy="45" r="1.6" fill="#5A3E22" />
+            <circle cx="46" cy="52" r="1.6" fill="#5A3E22" />
+            <circle cx="60" cy="53" r="1.6" fill="#5A3E22" />
+          </svg>
+        </div>
+        <span class="cake-tag">Signature</span>
+        <h3>Original Tiramisu</h3>
+        <p class="desc">Espresso-soaked layers, mascarpone cream, and a generous dust of cocoa. Sold per box.</p>
+        <div class="cake-price-row">
+          <span class="cake-price">RM 14</span>
+          <span class="cake-size">per box · RM 13 for 2+</span>
+        </div>
+        <span class="view-hint">View photo &amp; prices →</span>
+      </div>
+
+      <div class="cake-card" tabindex="0" role="button" data-cake-name="Blueberry Cheesecake"
+        data-cake-img="blueberry-cheese.png" data-cake-tag="Cheesecake"
+        data-cake-prices='[["Slice","RM 12"],["Whole 7\"","RM 100"],["Whole 9\"","RM 135"]]'>
+        <div class="cake-swatch">
+          <svg class="mini-cake" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 50 L15 68 L50 78 L50 60 Z" fill="#F3EAD2" />
+            <path d="M85 50 L85 68 L50 78 L50 60 Z" fill="#D9C79E" />
+            <path d="M15 50 L50 40 L85 50 L50 60 Z" fill="#FBF6E8" />
+            <circle cx="38" cy="45" r="3.4" fill="#5B4B8A" />
+            <circle cx="52" cy="48" r="3" fill="#4A3B78" />
+            <circle cx="63" cy="44" r="3.2" fill="#5B4B8A" />
+            <path d="M30 51 C40 47 60 47 70 51" stroke="#4A3B78" stroke-width="1.4" fill="none"
+              stroke-linecap="round" />
+          </svg>
+        </div>
+        <span class="cake-tag">Cheesecake</span>
+        <h3>Blueberry Cheesecake</h3>
+        <p class="desc">Creamy baked cheesecake topped with a glossy blueberry compote.</p>
+        <div class="cake-price-row">
+          <span class="cake-price">RM 12</span>
+          <span class="cake-size">slice · also 7"/9" whole</span>
+        </div>
+        <span class="view-hint">View photo &amp; prices →</span>
+      </div>
+
+      <div class="cake-card" tabindex="0" role="button" data-cake-name="Strawberry Cheesecake"
+        data-cake-img="strawberry-cheese.jfif" data-cake-tag="Cheesecake"
+        data-cake-prices='[["Slice","RM 12"],["Whole 7\"","RM 100"],["Whole 9\"","RM 135"]]'>
+        <div class="cake-swatch">
+          <svg class="mini-cake" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 50 L15 68 L50 78 L50 60 Z" fill="#F3EAD2" />
+            <path d="M85 50 L85 68 L50 78 L50 60 Z" fill="#D9C79E" />
+            <path d="M15 50 L50 40 L85 50 L50 60 Z" fill="#FBF6E8" />
+            <path d="M46 42 L50 50 L54 42 Z" fill="#D6425A" />
+            <circle cx="50" cy="52" r="4.2" fill="#E14A63" />
+            <circle cx="48" cy="51" r="0.7" fill="#FBE7EA" />
+            <circle cx="52" cy="53" r="0.7" fill="#FBE7EA" />
+          </svg>
+        </div>
+        <span class="cake-tag">Cheesecake</span>
+        <h3>Strawberry Cheesecake</h3>
+        <p class="desc">Baked cheesecake finished with a fresh strawberry glaze.</p>
+        <div class="cake-price-row">
+          <span class="cake-price">RM 12</span>
+          <span class="cake-size">slice · also 7"/9" whole</span>
+        </div>
+        <span class="view-hint">View photo &amp; prices →</span>
+      </div>
+
+      <div class="cake-card" tabindex="0" role="button" data-cake-name="Matcha Chocolate Cheesecake"
+        data-cake-img="matcha-chocolate.png" data-cake-tag="Cheesecake"
+        data-cake-prices='[["Slice","RM 12"],["Whole 7\"","RM 100"],["Whole 9\"","RM 135"]]'>
+        <div class="cake-swatch">
+          <svg class="mini-cake" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 50 L15 68 L50 78 L50 60 Z" fill="#8FA05A" />
+            <path d="M85 50 L85 68 L50 78 L50 60 Z" fill="#6B7C3E" />
+            <path d="M15 50 L50 40 L85 50 L50 60 Z" fill="#B8C97E" />
+            <path d="M30 47 C40 43 45 51 55 47 C65 43 70 49 76 46" stroke="#3B2A20" stroke-width="1.6" fill="none"
+              stroke-linecap="round" />
+          </svg>
+        </div>
+        <span class="cake-tag">Cheesecake</span>
+        <h3>Matcha Chocolate Cheesecake</h3>
+        <p class="desc">Earthy matcha cheesecake marbled with rich dark chocolate.</p>
+        <div class="cake-price-row">
+          <span class="cake-price">RM 12</span>
+          <span class="cake-size">slice · also 7"/9" whole</span>
+        </div>
+        <span class="view-hint">View photo &amp; prices →</span>
+      </div>
+
+      <div class="cake-card" tabindex="0" role="button" data-cake-name="Matcha Cheesecake"
+        data-cake-img="matcha-cheese.jfif" data-cake-tag="Cheesecake"
+        data-cake-prices='[["Slice","RM 12"],["Whole 7\"","RM 100"],["Whole 9\"","RM 135"]]'>
+        <div class="cake-swatch">
+          <svg class="mini-cake" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 50 L15 68 L50 78 L50 60 Z" fill="#A9BE73" />
+            <path d="M85 50 L85 68 L50 78 L50 60 Z" fill="#7E9450" />
+            <path d="M15 50 L50 40 L85 50 L50 60 Z" fill="#D3E29B" />
+            <circle cx="50" cy="48" r="3.2" fill="#5F7A34" />
+          </svg>
+        </div>
+        <span class="cake-tag">Cheesecake</span>
+        <h3>Matcha Cheesecake</h3>
+        <p class="desc">Smooth, baked cheesecake infused with ceremonial-grade matcha.</p>
+        <div class="cake-price-row">
+          <span class="cake-price">RM 12</span>
+          <span class="cake-size">slice · also 7"/9" whole</span>
+        </div>
+        <span class="view-hint">View photo &amp; prices →</span>
+      </div>
+
+      <div class="cake-card">
+        <div class="cake-swatch">
+          <svg class="mini-cake" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 50 L15 68 L50 78 L50 60 Z" fill="#F3EAD2" />
+            <path d="M85 50 L85 68 L50 78 L50 60 Z" fill="#D9C79E" />
+            <path d="M15 50 L50 40 L85 50 L50 60 Z" fill="#FBF6E8" />
+            <circle cx="38" cy="46" r="2.6" fill="#D98BA5" />
+            <circle cx="50" cy="49" r="2.6" fill="#E3A857" />
+            <circle cx="62" cy="45" r="2.6" fill="#8A9A5B" />
+          </svg>
+        </div>
+        <span class="cake-tag">Made to order</span>
+        <h3>Customizable Cheesecake</h3>
+        <p class="desc">Tell us your favourite flavour or topping and we'll bake it your way.</p>
+        <div class="cake-price-row">
+          <span class="cake-price">Ask us</span>
+          <span class="cake-size">flavour &amp; price on request</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact">
+    <div class="contact-wrap">
+      <div>
+        <span class="eyebrow">Order a cake</span>
+        <h2>Let's get baking</h2>
+        <p>Visit our stall at Sungai Ara Pasar or message us on WhatsApp / Instagram / email to place an order or
+          enquire about custom designs.</p>
+      </div>
+
+      <ul class="contact-list">
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M4 5h16v14H4z" stroke="#E3A857" stroke-width="1.6" />
+            <path d="M4 6l8 7 8-7" stroke="#E3A857" stroke-width="1.6" />
+          </svg>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:rhang094@gmail.com"
+                style="color:inherit; text-decoration:underline; text-underline-offset:3px;">rhang094@gmail.com</a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M6 3c1 3 1 5 2 6-1 1-2 2-1 4s3 5 6 6 3 0 4-1c2 1 4 1 6 2 0 2-2 4-4 4-8 0-15-7-15-15 0-2 2-4 2-6z"
+              fill="#E3A857" />
+          </svg>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value"><a href="https://wa.me/601136153993" target="_blank"
+                style="color:inherit; text-decoration:underline; text-underline-offset:3px;">+60 11-3615 3993</a></div>
+          </div>
+        </li>
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="#E3A857" stroke-width="1.6" />
+            <circle cx="12" cy="12" r="4" stroke="#E3A857" stroke-width="1.6" />
+            <circle cx="17.5" cy="6.5" r="1" fill="#E3A857" />
+          </svg>
+          <div>
+            <div class="contact-label">Instagram</div>
+            <div class="contact-value"><a href="https://instagram.com/summerpastry2025" target="_blank"
+                style="color:inherit; text-decoration:underline; text-underline-offset:3px;">@summerpastry2025</a></div>
+          </div>
+        </li>
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none">
+            <path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z" stroke="#E3A857" stroke-width="1.6" />
+            <circle cx="12" cy="10" r="2.4" stroke="#E3A857" stroke-width="1.6" />
+          </svg>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Sungai Ara Pasar</div>
+          </div>
+        </li>
+        <li>
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="#E3A857" stroke-width="1.6" />
+            <path d="M12 7v5l3 3" stroke="#E3A857" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+          <div>
+            <div class="contact-label">Business Hours</div>
+            <div class="contact-value">Every Saturday 8:00 AM</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Summer's Pastry. Baked with love, one order at a time.
+  </footer>
+
+  <div class="cake-modal-overlay" id="cakeModalOverlay">
+    <div class="cake-modal" role="dialog" aria-modal="true" aria-labelledby="cakeModalTitle">
+      <button class="cake-modal-close" id="cakeModalClose" aria-label="Close">&times;</button>
+      <div class="cake-modal-img-wrap">
+        <img id="cakeModalImg" src="" alt="">
+      </div>
+      <div class="cake-modal-body">
+        <span class="cake-tag" id="cakeModalTag"></span>
+        <h3 id="cakeModalTitle"></h3>
+        <table class="price-table" id="cakeModalPrices"></table>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Subtle 3D tilt on the cake cards, following the cursor.
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var canHover = window.matchMedia('(hover: hover)').matches;
+
+    if (!reduceMotion && canHover) {
+      document.querySelectorAll('.cake-card').forEach(function (card) {
+        var bounds;
+
+        card.addEventListener('mouseenter', function () {
+          bounds = card.getBoundingClientRect();
+        });
+
+        card.addEventListener('mousemove', function (e) {
+          if (!bounds) bounds = card.getBoundingClientRect();
+          var px = (e.clientX - bounds.left) / bounds.width;   // 0 -> 1
+          var py = (e.clientY - bounds.top) / bounds.height;   // 0 -> 1
+          var rotateY = (px - 0.5) * 16;   // left/right tilt
+          var rotateX = (0.5 - py) * 16;   // up/down tilt
+          card.style.transform =
+            'translateY(-8px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          card.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+        });
+      });
+    }
+
+    // Cake detail modal: click (or Enter/Space) on a card that has a photo.
+    (function () {
+      var overlay = document.getElementById('cakeModalOverlay');
+      var closeBtn = document.getElementById('cakeModalClose');
+      var imgEl = document.getElementById('cakeModalImg');
+      var tagEl = document.getElementById('cakeModalTag');
+      var titleEl = document.getElementById('cakeModalTitle');
+      var pricesEl = document.getElementById('cakeModalPrices');
+      var lastFocused = null;
+
+      function openModal(card) {
+        var name = card.getAttribute('data-cake-name') || '';
+        var img = card.getAttribute('data-cake-img') || '';
+        var tag = card.getAttribute('data-cake-tag') || '';
+        var prices = [];
+        try {
+          prices = JSON.parse(card.getAttribute('data-cake-prices') || '[]');
+        } catch (e) {
+          prices = [];
+        }
+
+        imgEl.src = img;
+        imgEl.alt = name;
+        tagEl.textContent = tag;
+        titleEl.textContent = name;
+
+        pricesEl.innerHTML = '';
+        prices.forEach(function (row) {
+          var tr = document.createElement('tr');
+          var tdLabel = document.createElement('td');
+          tdLabel.textContent = row[0];
+          var tdValue = document.createElement('td');
+          tdValue.textContent = row[1];
+          tr.appendChild(tdLabel);
+          tr.appendChild(tdValue);
+          pricesEl.appendChild(tr);
+        });
+
+        lastFocused = document.activeElement;
+        overlay.classList.add('is-open');
+        closeBtn.focus();
+      }
+
+      function closeModal() {
+        overlay.classList.remove('is-open');
+        if (lastFocused) lastFocused.focus();
+      }
+
+      document.querySelectorAll('.cake-card[data-cake-img]').forEach(function (card) {
+        card.addEventListener('click', function () {
+          openModal(card);
+        });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(card);
+          }
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
